@@ -2,6 +2,7 @@ import test
 import speech_recognition as sr
 from extract import extrct
 import simulation
+import bluetooth_transmission
 
 def prog():
     while(1):
@@ -13,6 +14,7 @@ def prog():
             Text = Text.lower()
             result = extrct(Text)
         print(result)
-        simulation.simulate(result)
+        #simulation.simulate(result)
+        bluetooth_transmission.simulate_car(result)
         
 prog()
