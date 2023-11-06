@@ -1,14 +1,14 @@
 import bluetooth
 import math
+import serial
+import time
 
 default = [1, 10]
 
 def send_data(data):
-    address = bluetooth.discover_devices()[0]
-    socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-    socket.connect(address)
-    socket.send(data)
-    socket.close()
+    ser = serial.Serial("COM6", 9600, timeout=1)
+    ser.write(bytearray(data, 'ascii'))
+    ser.close()
 
 def simulate_car(X):
     for i in range(len(X)):
