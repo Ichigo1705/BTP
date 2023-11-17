@@ -16,7 +16,7 @@ from collections import deque
 # prepended. This helps to prevent chopping the beggining
 # of the phrase.
 
-def record_on_detect(file_name, silence_limit=1, silence_threshold=2500, chunk=1024, rate=44100, prev_audio=1):
+def record_on_detect(file_name, silence_limit=0.8, silence_threshold=2500, chunk=1024, rate=44100, prev_audio=1):
   CHANNELS = 1
   FORMAT = pyaudio.paInt16
 
@@ -70,4 +70,4 @@ def record_on_detect(file_name, silence_limit=1, silence_threshold=2500, chunk=1
   wf.close()
 
 
-# record_on_detect('output')
+#record_on_detect('output')
